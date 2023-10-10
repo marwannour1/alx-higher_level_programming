@@ -6,5 +6,5 @@ def print_matrix_integer(matrix=[[]]):
         if len(row) == 0:
             print()
         for col in range(0, len(row)):
-            print("{:d}".format(row[col], end='\n'
-                                if col is (len(row) - 1) else ' '))
+            print("{:d}".format(row[col]), end='\n'
+                                if col == (len(row) - 1) else ' ')
