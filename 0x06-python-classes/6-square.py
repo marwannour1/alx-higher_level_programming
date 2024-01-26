@@ -20,6 +20,7 @@ class Square():
             size (int): size of the square
         """
         self.size = size
+        self.position = position
 
     @property
     def size(self):
