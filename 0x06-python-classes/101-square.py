@@ -100,4 +100,4 @@ class Square():
         """ Method to print the square with the character #
         """
         self.my_print()
-        return ""
+        return None
