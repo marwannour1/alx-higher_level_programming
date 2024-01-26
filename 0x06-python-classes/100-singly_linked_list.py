@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """ This module is responsible for creating a class
 called Node which is used for a singly linked list
 
