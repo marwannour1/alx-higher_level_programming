@@ -100,7 +100,7 @@ class Square():
         """ Method to print the square with the character #
         """
         if self.__size == 0:
-            print()
+            return ""
         else:
             for i in range(self.__position[1]):
                 print()
@@ -108,4 +108,4 @@ class Square():
             for j in range(self.__size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
-        return ""
+            return ""
