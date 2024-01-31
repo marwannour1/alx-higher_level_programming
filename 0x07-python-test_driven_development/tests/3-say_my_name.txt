@@ -1,0 +1,177 @@
+The ``3-say_my_name`` module
+=============================
+Using the ``say_my_name`` function
+----------------------------------
+
+Import the function from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Test the function with two valid strings:
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+
+Test the function with an invalid first name:
+
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(True, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name([], "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name({}, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name((), "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+
+Test the function with invalid last name:
+
+    >>> say_my_name("John", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", [])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", {})
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("John", ())
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+
+Test the function with invalid first and last name:
+
+    >>> say_my_name(12, 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(True, True)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name([], [])
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name({}, {})
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name((), ())
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+
+Test the function with one missing argument
+
+    >>> say_my_name("John")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'last_name'
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 2 required positional arguments: 'first_name' and 'last_name'
+
+
+Test the function with more than two arguments
+
+    >>> say_my_name("John", "Smith", "Jr.")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 3 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 4 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 5 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 6 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V", "VI")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 7 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V", "VI", "VII")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 8 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V", "VI", "VII", "VIII")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 9 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes 2 positional arguments but 10 were given
+
+    >>> say_my_name("John", "Smith", "Jr.", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X")
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name
