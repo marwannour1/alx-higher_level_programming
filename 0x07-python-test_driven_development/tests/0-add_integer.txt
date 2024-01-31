@@ -74,3 +74,10 @@ Test two negative float arguments:
 
     >>> add_integer(-2.3, -5.7)
     -7
+
+Test float overflow:
+
+    >>> add_integer(1e100, 1e100)
+    Traceback (most recent call last):
+    ...
+    OverflowError: int too large to convert to float
