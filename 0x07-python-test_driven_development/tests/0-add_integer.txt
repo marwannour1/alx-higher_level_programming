@@ -81,3 +81,10 @@ Test float overflow:
     Traceback (most recent call last):
     ...
     OverflowError: int too large to convert to float
+
+Test convert float NAN to int:
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
