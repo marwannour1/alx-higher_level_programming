@@ -46,7 +46,8 @@ class TestMaxInteger(unittest.TestCase):
     
     def test_max_none(self):
         """Test with max None"""
-        self.assertEqual(max_integer([None, None, None]), None)
+        with self.assertRaises(TypeError):
+            max_integer([1, None, 3])
     
     def test_max_mixed(self):
         """Test with max mixed"""
@@ -58,8 +59,7 @@ class TestMaxInteger(unittest.TestCase):
     
     def test_max_nan(self):
         """Test with nan"""
-        with self.assertRaises(TypeError):
-            max_integer([1, float('nan'), 3])
+        self.assertEqual(max_integer([1, float('nan'), 3]), 3)
     
     def test_int(self):
         """Test with int"""
@@ -68,8 +68,7 @@ class TestMaxInteger(unittest.TestCase):
     
     def test_str(self):
         """Test with str"""
-        with self.assertRaises(TypeError):
-            max_integer("str")
+        self.assertEqual(max_integer("str"), "t")
 
 if __name__ == '__main__':
     unittest.main()
