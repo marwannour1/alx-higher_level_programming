@@ -80,14 +80,3 @@ class Rectangle:
         """Prints a message when the rectangle is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-
-#test
-
-if __name__ == "__main__":
-    my_rectangle_1 = Rectangle(2, 4)
-    my_rectangle_2 = Rectangle(2, 4)
-    print(my_rectangle_1)
-    print()
-    my_rectangle_2.print_symbol = "&"
-    print(my_rectangle_2)
