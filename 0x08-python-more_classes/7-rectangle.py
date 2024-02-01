@@ -67,7 +67,7 @@ class Rectangle:
             return ""
         output = ""
         for i in range(self.__height):
-            output += str(Rectangle.print_symbol) * self.__width
+            output += (str(self.print_symbol)) * self.__width
             if i != self.__height - 1:
                 output += "\n"
         return output
@@ -80,3 +80,14 @@ class Rectangle:
         """Prints a message when the rectangle is deleted"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+
+#test
+
+if __name__ == "__main__":
+    my_rectangle_1 = Rectangle(2, 4)
+    my_rectangle_2 = Rectangle(2, 4)
+    print(my_rectangle_1)
+    print()
+    my_rectangle_2.print_symbol = "&"
+    print(my_rectangle_2)
