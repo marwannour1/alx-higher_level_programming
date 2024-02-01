@@ -1,6 +1,6 @@
 class test():
-    def __init__(self):
-        self.__c = 3
+    def __init__(self, c=0):
+        self.__c = c
 
     @property
     def c(self):
@@ -8,6 +8,8 @@ class test():
 
     @c.setter
     def c(self, value):
+        if value > 5:
+            raise ValueError("Value must be less than 5")
         self.__c = value
     
 class test2(test):
@@ -17,11 +19,7 @@ class test2(test):
 
 
 if __name__ == "__main__":
-    t = test()
-    t.c = 2
+    t = test(10)
     print(t.c)
-    t2 = test2()
-    print(t2.c)
-    t2.c = 5
-    print(t2.c)
-    print(t.c)
+    t.c = 17
+  
