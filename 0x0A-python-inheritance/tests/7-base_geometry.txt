@@ -5,68 +5,68 @@ Using the ``Geometry`` class
 
 import the Geometry class from the 7-base_geometry module:
 
-    >>>Geometry = __import__('7-base_geometry').Geometry
+    >>> Geometry = __import__('7-base_geometry').BaseGeometry
 
 Testing the integer_validator method
 ====================================
 
 Create a new Geometry object:
 
-    >>>g = Geometry()
+    >>> g = Geometry()
 
 Test the integer_validator method with an integer:
 
-    >>>g.integer_validator("width", 12)
+    >>> g.integer_validator("width", 12)
 
 Test the integer_validator method with a non-integer:
 
-    >>>g.integer_validator("width", "12")
+    >>> g.integer_validator("width", "12")
     Traceback (most recent call last):
     ...
     TypeError: width must be an integer
 
 Test the integer_validator method with a negative integer:
 
-    >>>g.integer_validator("width", -12)
+    >>> g.integer_validator("width", -12)
     Traceback (most recent call last):
     ...
     ValueError: width must be greater than 0
 
 Test the integer_validator method with a zero:
 
-    >>>g.integer_validator("width", 0)
+    >>> g.integer_validator("width", 0)
     Traceback (most recent call last):
     ...
     ValueError: width must be greater than 0
 
 Test the integer_validator method with a positive integer:
 
-    >>>g.integer_validator("width", 12)
+    >>> g.integer_validator("width", 12)
 
 Test the integer_validator method with a float:
 
-    >>>g.integer_validator("width", 12.5)
+    >>> g.integer_validator("width", 12.5)
     Traceback (most recent call last):
     ...
     TypeError: width must be an integer
 
 Test the integer_validator method no args:
 
-    >>>g.integer_validator()
+    >>> g.integer_validator()
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 Test the integer_validator method with one arg:
 
-    >>>g.integer_validator("width")
+    >>> g.integer_validator("width")
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
 Test the integer_validator method with three args:
 
-    >>>g.integer_validator("width", 12, 12)
+    >>> g.integer_validator("width", 12, 12)
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+    TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
