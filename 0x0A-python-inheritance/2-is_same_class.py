@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" This is module that contains a function to check if an object is an instance
-    of a class
+""" This is module that contains a function to check if an object is an
+    instance of a class
 """
 
 
