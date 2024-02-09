@@ -21,9 +21,3 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """ This method returns a string representation of the instance"""
         return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
-    
-    def print(self):
-        """ This method prints the rectangle"""
-        print("[Rectangle] " + str(self.__width) + "/" + str(self.__height)
-              , end="")
-        print()
