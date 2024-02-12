@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ This module returns an object (Python data structure) represented by
-a JSON string 
+a JSON string
 """
 
 
