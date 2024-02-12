@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ This module reads a file and prints its content to the console """
 
 
