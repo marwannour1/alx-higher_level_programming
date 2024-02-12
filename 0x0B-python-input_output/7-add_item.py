@@ -14,7 +14,7 @@ def main():
     arglist = list(sys.argv[1:])
     try:
         my_list = load_from_json_file("add_item.json")
-    except FileNotFoundError:
+    except Exception as e:
         my_list = []
 
     my_list.extend(arglist)
