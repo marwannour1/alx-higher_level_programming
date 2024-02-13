@@ -3,9 +3,7 @@
 :"""
 
 
-
 from sys import stdin
-
 
 status_codes = {
     "200": 0,
@@ -20,6 +18,7 @@ status_codes = {
 
 total_size = 0
 counter = 0
+
 
 def printer():
     """Prints the accumulated metrics"""
