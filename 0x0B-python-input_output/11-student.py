@@ -22,7 +22,7 @@ class Student:
                 if key in self.__dict__:
                     new_dict[key] = self.__dict__[key]
             return new_dict
-    
+
     def reload_from_json(self, json):
         """Replaces all attributes of the Student instance"""
         for key in json:
