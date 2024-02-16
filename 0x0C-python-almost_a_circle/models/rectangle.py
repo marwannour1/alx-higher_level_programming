@@ -91,8 +91,15 @@ class Rectangle(Base):
 
     def update(self, *args):
         """This method updates the attributes of the Rectangle object."""
-        self.id = args[0]
-        self.width = args[1]
-        self.height = args[2]
-        self.x = args[3]
-        self.y = args[4]
+        if args:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                elif i == 1:
+                    self.width = arg
+                elif i == 2:
+                    self.height = arg
+                elif i == 3:
+                    self.x = arg
+                elif i == 4:
+                    self.y = arg
