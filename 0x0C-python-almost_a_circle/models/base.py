@@ -62,4 +62,5 @@ class Base:
 
         with open(filename, "r") as f:
             list_dicts = cls.from_json_string(f.read())
-            return [cls.create(**d) for d in list_dicts]
+
+        return [cls.create(**d) for d in list_dicts]
