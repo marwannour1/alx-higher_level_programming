@@ -92,3 +92,36 @@ class Base:
             list_dicts = cls.from_json_string(f.read())
 
         return [cls.create(**d) for d in list_dicts]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """This method draws Rectangle and Square objects using the turtle
+        module."""
+        import turtle
+        import random
+
+        turtle.bgcolor("black")
+        turtle.title("Draw Shapes")
+        turtle.speed(0)
+
+        for rect in list_rectangles:
+            turtle.penup()
+            turtle.goto(rect.x, rect.y)
+            turtle.pendown()
+            turtle.color(random.random(), random.random(), random.random())
+            for _ in range(2):
+                turtle.forward(rect.width)
+                turtle.left(90)
+                turtle.forward(rect.height)
+                turtle.left(90)
+
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
+            turtle.color(random.random(), random.random(), random.random())
+            for _ in range(4):
+                turtle.forward(square.size)
+                turtle.left(90)
+
+        turtle.exitonclick()
