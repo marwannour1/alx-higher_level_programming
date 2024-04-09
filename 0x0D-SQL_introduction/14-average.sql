@@ -1,4 +1,4 @@
 -- computes the score average of second_table
 
-SELECT AVG
+SELECT AVG(score)
 FROM second_table;
