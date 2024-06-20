@@ -7,7 +7,7 @@ module.exports = class Square extends require('./4-rectangle') {
     if (c === undefined) {
       super.print();
     } else {
-      for (let i = 0; i < this.size; i++) {
+      for (let i = 0; i < this.height; i++) {
         console.log(c.repeat(this.width));
       }
     }
