@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 ''' This module is used to select all the stated from the database'''
 
 import MySQLdb
