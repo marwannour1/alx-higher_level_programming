@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
+def filterStates(userName: str, password: str, dbName: str) -> None:
     ''' This function lists all the cities'''
 
     try:
@@ -14,7 +14,7 @@ def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
         query = "SELECT state_id, cities.id, cities.name FROM cities\
                 JOIN states ON cities.state_id = states.id\
                 ORDER BY cities.id ASC;"
-        cur.execute(query, (name, ))
+        cur.execute(query)
 
         rows = cur.fetchall()
 
@@ -29,7 +29,7 @@ def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 5:
-        filterStates(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    if len(sys.argv) == 4:
+        filterStates(sys.argv[1], sys.argv[2], sys.argv[3])
     else:
         print("Usage: {} username password database name".format(sys.argv[0]))
