@@ -4,7 +4,8 @@ import MySQLdb
 import sys
 
 
-def filterStates(userName: str, password: str, dbName: str, cityName: str) -> None:
+def filterStates(userName: str, password: str, dbName: str,
+                 cityName: str) -> None:
     ''' This function lists all the cities'''
 
     try:
@@ -32,4 +33,5 @@ if __name__ == "__main__":
     if len(sys.argv) == 5:
         filterStates(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
     else:
-        print("Usage: {} username password database cityName".format(sys.argv[0]))
+        print("Usage: {} username password database\
+              cityName".format(sys.argv[0]))
