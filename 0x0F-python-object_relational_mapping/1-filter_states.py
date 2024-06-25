@@ -1,10 +1,8 @@
-import MySQLdb
-import sys
-
 #!/usr/bin/python3
 ''' This module is used to select all the states from the database with
     a name starting with N (upper N)'''
-
+import MySQLdb
+import sys
 
 def filterStates(userName: str, password: str, dbName: str) -> None:
     ''' This function lists all the states from the database with a name
