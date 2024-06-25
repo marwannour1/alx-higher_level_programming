@@ -7,7 +7,7 @@ import sys
 
 def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
     ''' This function lists all the states from the database with a name
-        starting with N (upper N)'''
+         given by input string'''
 
     try:
         db = MySQLdb.connect(host="localhost", port=3306, user=userName,
@@ -29,7 +29,7 @@ def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        filterStates(sys.argv[1], sys.argv[2], sys.argv[3])
+    if len(sys.argv) == 5:
+        filterStates(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
     else:
-        print("Usage: {} username password database".format(sys.argv[0]))
+        print("Usage: {} username password database name".format(sys.argv[0]))
