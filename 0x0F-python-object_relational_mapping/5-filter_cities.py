@@ -19,8 +19,7 @@ def filterStates(userName: str, password: str, dbName: str, cityName: str) -> No
 
         rows = cur.fetchall()
 
-        for row in rows:
-            print(row)
+        print(", ".join([row[0] for row in rows]))
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
 
