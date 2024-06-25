@@ -11,7 +11,7 @@ def filterStates(userName: str, password: str, dbName: str) -> None:
         db = MySQLdb.connect(host="localhost", port=3306, user=userName,
                              passwd=password, db=dbName, charset="utf8")
         cur = db.cursor()
-        query = "SELECT state_id, cities.id, cities.name FROM cities\
+        query = "SELECT cities.id, cities.name, states.name FROM cities\
                 JOIN states ON cities.state_id = states.id\
                 ORDER BY cities.id ASC;"
         cur.execute(query)
