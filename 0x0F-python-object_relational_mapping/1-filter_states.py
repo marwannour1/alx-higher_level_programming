@@ -4,6 +4,7 @@
 import MySQLdb
 import sys
 
+
 def filterStates(userName: str, password: str, dbName: str) -> None:
     ''' This function lists all the states from the database with a name
         starting with N (upper N)'''
