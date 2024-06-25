@@ -15,7 +15,7 @@ def filterStates(userName: str, password: str, dbName: str, name: str) -> None:
         cur = db.cursor()
         query = "SELECT * FROM states WHERE name = %s COLLATE utf8_bin\
             ORDER BY id ASC;"
-        cur.execute(query, (name))
+        cur.execute(query, (name, ))
 
         rows = cur.fetchall()
 
