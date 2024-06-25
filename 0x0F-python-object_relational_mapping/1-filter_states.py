@@ -1,8 +1,9 @@
+import MySQLdb
+import sys
+
 #!/usr/bin/python3
 ''' This module is used to select all the states from the database with
     a name starting with N (upper N)'''
-import MySQLdb
-import sys
 
 
 def filterStates(userName: str, password: str, dbName: str) -> None:
@@ -13,7 +14,8 @@ def filterStates(userName: str, password: str, dbName: str) -> None:
         db = MySQLdb.connect(host="localhost", port=3306, user=userName,
                              passwd=password, db=dbName, charset="utf8")
         cur = db.cursor()
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY \
+        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' AND name NOT\
+                    LIKE 'n%' ORDER BY \
                     id ASC;")
 
         rows = cur.fetchall()
