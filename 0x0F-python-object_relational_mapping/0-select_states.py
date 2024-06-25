@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 ''' This module is used to select all the stated from the database'''
-
 import MySQLdb
 import sys
-def listStates(userName : str, password : str, dbName : str) -> None:
+
+
+def listStates(userName: str, password: str, dbName: str) -> None:
     ''' This function lists all the states from the database'''
+
     try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=userName, passwd=password, db=dbName, charset="utf8")
+        db = MySQLdb.connect(host="localhost", port=3306, user=userName,
+                             passwd=password, db=dbName, charset="utf8")
         cur = db.cursor()
         cur.execute("SELECT * FROM states ORDER BY id ASC;")
         rows = cur.fetchall()
@@ -14,10 +17,11 @@ def listStates(userName : str, password : str, dbName : str) -> None:
         for row in rows:
             print(row)
     except MySQLdb.Error as e:
-        print ("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
     finally:
         cur.close()
         db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
