@@ -10,6 +10,7 @@ def listStates(userName : str, password : str, dbName : str) -> None:
         cur = db.cursor()
         cur.execute("SELECT * FROM states ORDER BY id ASC;")
         rows = cur.fetchall()
+
         for row in rows:
             print(row)
     except MySQLdb.Error as e:
