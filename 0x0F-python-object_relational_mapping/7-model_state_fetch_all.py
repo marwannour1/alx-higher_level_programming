@@ -16,7 +16,8 @@ def fetch_all(userName: str, passWord: str, dbName: str) -> None:
     '''
     try:
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                            .format(userName, passWord, dbName), pool_pre_ping=True)
+                               .format(userName, passWord, dbName),
+                               pool_pre_ping=True)
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
