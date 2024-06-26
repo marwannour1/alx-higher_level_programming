@@ -24,9 +24,9 @@ def fetch_all(userName: str, passWord: str, dbName: str,
         Session = sessionmaker(bind=engine)
         session = Session()
         state = session.query(State).filter(State.name == stateName
-                                                 ).order_by(State.id).first()
+                                                 ).order_by(State.id).all()
         if state:
-            print('{}'.format(state.id))
+            print('{}'.format(state[0].id))
         else:
             print('Not found')
 
