@@ -37,7 +37,7 @@ def fetch_all(userName: str, passWord: str, dbName: str,
 
 
 if __name__ == '__main__':
-    if len(argv) == 4:
-        fetch_all(argv[1], argv[2], argv[3])
+    if len(argv) == 5:
+        fetch_all(argv[1], argv[2], argv[3], argv[4])
     else:
-        print('Usage: {} username password database'.format(argv[0]))
+        print('Usage: {} username password database state_name'.format(argv[0]))
