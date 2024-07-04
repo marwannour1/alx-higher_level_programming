@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
+
 def fetch_all(userName: str, passWord: str, dbName: str) -> None:
     ''' Fetch all cities from the database
         userName: the username
@@ -21,13 +22,15 @@ def fetch_all(userName: str, passWord: str, dbName: str) -> None:
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
-        for city, state in session.query(City, State).filter\
-            (City.state_id == State.id).all():
+        for city, state in session.query(City,
+                                         State).filter(City.state_id ==
+                                                       State.id).all():
             print('{}: ({}) {}'.format(state.name, city.id, city.name))
     except Exception as e:
         print(e)
     finally:
         session.close()
+
 
 if __name__ == '__main__':
     fetch_all(argv[1], argv[2], argv[3])
