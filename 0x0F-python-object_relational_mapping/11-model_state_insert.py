@@ -8,8 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 
-def fetch_all(userName: str, passWord: str, dbName: str,
-              stateName: str) -> None:
+def fetch_all(userName: str, passWord: str, dbName: str) -> None:
     ''' Fetch all states from the database
         userName: the username
         passWord: the password
