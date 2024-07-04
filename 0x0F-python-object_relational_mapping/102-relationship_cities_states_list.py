@@ -23,14 +23,16 @@ def add_state_city(userName: str, passWord: str, dbName: str) -> None:
         Base.metadata.create_all(engine)
         Session = sessionmaker(bind=engine)
         session = Session()
-        cities = session.query(City).order_by(City.id).all()
-        for c in cities:
-            print("{}: {} -> {}".format(c.id, c.name, c.state.name))
+        state = session.query(State).order_by(State.id).all()
+        for s in state:
+            print("{}: {}".format(s.id, s.name))
+            for c in s.cities:
+                print("\t{}: {}".format(c.id, c.name))
 
     except Exception as e:
         print(e)
     finally:
-        session.close()
+        pass
 
 
 if __name__ == '__main__':
