@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 ''' This module contains a script that adds the State California and City
     San Francisco to the database using SQLAlchemy'''
-from model_city import City, Base
-from model_state import State
+from relationship_state import State, Base
+from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
@@ -23,8 +23,9 @@ def add_state_city(userName: str, passWord: str, dbName: str) -> None:
         Session = sessionmaker(bind=engine)
         session = Session()
         new_state = State(name='California')
-        new_city = City(name='San Francisco', state=new_state)
         session.add(new_state)
+        session.commit()
+        new_city = City(name='San Francisco', state_id=new_state.id)
         session.add(new_city)
         session.commit()
     except Exception as e:
